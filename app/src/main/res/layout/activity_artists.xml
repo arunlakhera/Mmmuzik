@@ -16,14 +16,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
-            android:text="@string/title_artists"
+            android:text="@string/title_albums"
             android:textColor="@color/textColorDefault"
             android:textSize="@dimen/text_size_large"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/button_Back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/back"
+            android:layout_marginRight="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            />
     </LinearLayout>
 
     <ListView

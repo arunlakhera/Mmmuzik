@@ -11,5 +11,5 @@
     <dimen name="text_size_small">20sp</dimen>
     <dimen name="text_size_med">24sp</dimen>
     <dimen name="text_size_large">28sp</dimen>
-
+    <dimen name="divider_height">1dp</dimen>
 </resources>

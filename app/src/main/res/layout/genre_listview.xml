@@ -16,10 +16,10 @@
         />
 
     <TextView
-        android:id="@+id/textView_Album"
+        android:id="@+id/textView_Genre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/title_albums"
+        android:text="@string/title_artists"
         android:layout_gravity="center"
         android:textColor="@color/textColorDefault"
         android:textSize="@dimen/text_size_med"

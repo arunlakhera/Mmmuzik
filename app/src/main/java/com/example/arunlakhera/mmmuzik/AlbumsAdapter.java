@@ -46,6 +46,6 @@ public class AlbumsAdapter extends BaseAdapter {
         album_TextView.setText(albumsList[i]);
         icon.setImageResource(R.drawable.green);
 
-        return null;
+        return view;
     }
 }

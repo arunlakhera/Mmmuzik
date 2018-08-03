@@ -23,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        albumsFlag = false;
-        artistsFlag = false;
-        genreFlag = false;
-        tracksFlag = false;
-
         albums_Layout = findViewById(R.id.layout_Albums);
         artistsLayout = findViewById(R.id.layout_Artists);
         genre_Layout = findViewById(R.id.layout_Genre);
@@ -37,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 albumsFlag = true;
+                artistsFlag = false;
+                genreFlag = false;
+                tracksFlag = false;
                 callIntent();
             }
         });
@@ -45,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 artistsFlag = true;
+                albumsFlag = false;
+                genreFlag = false;
+                tracksFlag = false;
                 callIntent();
             }
         });
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 genreFlag = true;
+                albumsFlag = false;
+                artistsFlag = false;
+                tracksFlag = false;
                 callIntent();
             }
         });
@@ -61,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tracksFlag = true;
+                albumsFlag = false;
+                artistsFlag = false;
+                genreFlag = false;
                 callIntent();
             }
         });

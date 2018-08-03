@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class AlbumsActivity extends AppCompatActivity {
 
     ListView albumsList;
-    String albums[] = {"India", "China", "australia", "Portugle", "America", "NewZealand"};
+    String albums[] = {"Album 1", "Album 2", "Album 3", "Album 4", "Album 5", "Album 6"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class AlbumsActivity extends AppCompatActivity {
 
         albumsList = findViewById(R.id.listView_Albums);
         AlbumsAdapter albumsAdapter = new AlbumsAdapter(getApplicationContext(),albums);
-
-
+        albumsList.setAdapter(albumsAdapter);
     }
 }

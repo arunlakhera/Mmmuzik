@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlbumsActivity"
     android:background="@color/appBackground"
-    >
+    tools:context=".AlbumsActivity">
 
     <LinearLayout
         android:id="@+id/layout_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:background="@drawable/black"
         android:orientation="horizontal">
 
@@ -30,8 +30,8 @@
         android:id="@+id/listView_Albums"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/material_blue_grey_800"
-        android:dividerHeight="1dp"
-        android:footerDividersEnabled="false"
+        android:layout_below="@id/layout_toolbar"
+        android:divider="@color/colorAccent"
+        android:dividerHeight="@dimen/divider_height"
         />
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -40,19 +41,16 @@ public class TracksActivity extends AppCompatActivity {
             if(albumName.equals("Album 1")){
                 String[] albumTracks = {"Track 1", "Track 2"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
 
             }else if(albumName.equals("Album 2")){
                 String[] albumTracks = {"Track 1", "Track 2","Track 3"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }else{
                 String[] albumTracks = allTracks;
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }
 
         }else if(!artistName.equals("NA")) {
@@ -60,19 +58,16 @@ public class TracksActivity extends AppCompatActivity {
             if(artistName.equals("Artist 1")){
                 String[] albumTracks = {"Track 1", "Track 2"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
 
             }else if(artistName.equals("Artist 2")){
                 String[] albumTracks = {"Track 1", "Track 2","Track 3"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }else{
                 String[] albumTracks = allTracks;
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }
 
         }else if(!genreName.equals("NA")) {
@@ -80,26 +75,21 @@ public class TracksActivity extends AppCompatActivity {
             if(genreName.equals("Genre 1")){
                 String[] albumTracks = {"Track 1", "Track 2"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
 
             }else if(genreName.equals("Genre 2")){
                 String[] albumTracks = {"Track 1", "Track 2","Track 3","Track 4"};
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }else{
                 String[] albumTracks = allTracks;
 
-                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-                tracksList.setAdapter(tracksAdapter);
+                loadTracks(albumTracks);
             }
 
         } else {
-            String[] albumTracks = allTracks;
+            loadTracks(allTracks);
 
-            tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-            tracksList.setAdapter(tracksAdapter);
         }
 
         back_Button.setOnClickListener(new View.OnClickListener() {
@@ -109,5 +99,27 @@ public class TracksActivity extends AppCompatActivity {
             }
         });
 
+        tracksList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String trackName = allTracks[i];
+
+                Intent trackIntent = new Intent(TracksActivity.this, PlayerActivity.class);
+                trackIntent.putExtra("trackName", trackName);
+               // albumIntent.putExtra("artistName", "NA");
+               // albumIntent.putExtra("genreName", "NA");
+                startActivity(trackIntent);
+
+            }
+        });
+
     }
+
+    public void loadTracks(String[] albumTracks){
+
+        tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+        tracksList.setAdapter(tracksAdapter);
+    }
+
 }

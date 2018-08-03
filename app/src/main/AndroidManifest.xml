@@ -19,7 +19,8 @@
         <activity android:name=".AlbumsActivity" />
         <activity android:name=".ArtistsActivity" />
         <activity android:name=".GenreActivity" />
-        <activity android:name=".TracksActivity"></activity>
+        <activity android:name=".TracksActivity" />
+        <activity android:name=".PlayerActivity"></activity>
     </application>
 
 </manifest>

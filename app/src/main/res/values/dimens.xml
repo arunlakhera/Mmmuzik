@@ -12,4 +12,5 @@
     <dimen name="text_size_med">24sp</dimen>
     <dimen name="text_size_large">28sp</dimen>
     <dimen name="divider_height">1dp</dimen>
+    <dimen name="control_size">48dp</dimen>
 </resources>

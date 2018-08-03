@@ -10,6 +10,7 @@ import android.widget.ListView;
 public class TracksActivity extends AppCompatActivity {
 
     ListView tracksList;
+
     String[] allTracks = {"Track1","Track2","Track3","Track 4","Track 5","Track 6"};
 
     Button back_Button;
@@ -17,6 +18,8 @@ public class TracksActivity extends AppCompatActivity {
 
     Bundle songBundle;
     String albumName;
+    String artistName;
+    String genreName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +32,70 @@ public class TracksActivity extends AppCompatActivity {
         songBundle = getIntent().getExtras();
 
         albumName = String.valueOf(songBundle.getString("albumName",""));
+        artistName = String.valueOf(songBundle.getString("artistName",""));
+        genreName = String.valueOf(songBundle.getString("genreName",""));
 
-        if(albumName.equals("Album 1")){
-            String[] albumTracks = {"Track 1", "Track 2"};
+        if(!albumName.equals("NA")) {
 
-            tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-            tracksList.setAdapter(tracksAdapter);
+            if(albumName.equals("Album 1")){
+                String[] albumTracks = {"Track 1", "Track 2"};
 
-        }else if(albumName.equals("Album 2")){
-            String[] albumTracks = {"Track 1", "Track 2","Track 3"};
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
 
-            tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
-            tracksList.setAdapter(tracksAdapter);
-        }else{
+            }else if(albumName.equals("Album 2")){
+                String[] albumTracks = {"Track 1", "Track 2","Track 3"};
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }else{
+                String[] albumTracks = allTracks;
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }
+
+        }else if(!artistName.equals("NA")) {
+
+            if(artistName.equals("Artist 1")){
+                String[] albumTracks = {"Track 1", "Track 2"};
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+
+            }else if(artistName.equals("Artist 2")){
+                String[] albumTracks = {"Track 1", "Track 2","Track 3"};
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }else{
+                String[] albumTracks = allTracks;
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }
+
+        }else if(!genreName.equals("NA")) {
+
+            if(genreName.equals("Genre 1")){
+                String[] albumTracks = {"Track 1", "Track 2"};
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+
+            }else if(genreName.equals("Genre 2")){
+                String[] albumTracks = {"Track 1", "Track 2","Track 3","Track 4"};
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }else{
+                String[] albumTracks = allTracks;
+
+                tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);
+                tracksList.setAdapter(tracksAdapter);
+            }
+
+        } else {
             String[] albumTracks = allTracks;
 
             tracksAdapter = new TracksAdapter(getApplicationContext(), albumTracks);

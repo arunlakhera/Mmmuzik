@@ -13,7 +13,7 @@ import android.widget.Button;
 public class AlbumsActivity extends AppCompatActivity {
 
     ListView albumsList;
-    String albums[] = {"Album 1", "Album 2", "Album 3", "Album 4", "Album 5", "Album 6"};
+    String albums[] = {"Album 1", "Album 2"};
 
     Button back_Button;
 
@@ -36,6 +36,8 @@ public class AlbumsActivity extends AppCompatActivity {
 
                 Intent albumIntent = new Intent(AlbumsActivity.this, TracksActivity.class);
                 albumIntent.putExtra("albumName", albumName);
+                albumIntent.putExtra("artistName", "NA");
+                albumIntent.putExtra("genreName", "NA");
                 startActivity(albumIntent);
 
             }

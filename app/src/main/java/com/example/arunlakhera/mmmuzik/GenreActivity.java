@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 public class GenreActivity extends AppCompatActivity {
 
     ListView genreList;
-    String genre[] = {"Genre 1", "Genre 2", "Genre 3", "Genre 4"};
+    String genre[] = {"Genre 1", "Genre 2"};
 
     Button back_Button;
 
@@ -24,6 +25,21 @@ public class GenreActivity extends AppCompatActivity {
 
         GenreAdapter genreAdapter = new GenreAdapter(getApplicationContext(),genre);
         genreList.setAdapter(genreAdapter);
+
+        genreList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String genreName = genre[i];
+
+                Intent albumIntent = new Intent(GenreActivity.this, TracksActivity.class);
+                albumIntent.putExtra("albumName", "NA");
+                albumIntent.putExtra("artistName", "NA");
+                albumIntent.putExtra("genreName", genreName);
+                startActivity(albumIntent);
+
+            }
+        });
 
         back_Button.setOnClickListener(new View.OnClickListener() {
             @Override

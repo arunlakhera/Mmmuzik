@@ -93,7 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
         }else if (tracksFlag){
 
-            activityIntent = new Intent(this,TracksActivity.class);
+            //activityIntent = new Intent(this,TracksActivity.class);
+
+            activityIntent = new Intent(MainActivity.this, TracksActivity.class);
+            activityIntent.putExtra("albumName", "NA");
+            activityIntent.putExtra("artistName", "NA");
+            activityIntent.putExtra("genreName", "NA");
 
         }
 

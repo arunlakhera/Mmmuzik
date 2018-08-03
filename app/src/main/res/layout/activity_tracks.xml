@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
-            android:text="@string/title_albums"
+            android:text="@string/title_tracks"
             android:textColor="@color/textColorDefault"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold"

@@ -16,11 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlbumsActivity" />
-        <activity android:name=".ArtistsActivity" />
-        <activity android:name=".GenreActivity" />
-        <activity android:name=".TracksActivity" />
-        <activity android:name=".PlayerActivity"></activity>
+        <activity android:name=".AlbumsActivity">
+            Shows all the Albums available
+        </activity>
+        <activity android:name=".ArtistsActivity">
+            Shows all Artists
+        </activity>
+        <activity android:name=".GenreActivity">
+            Shows all type os Genre Music Available
+        </activity>
+        <activity android:name=".TracksActivity">
+            Shows all the Tracks
+        </activity>
+        <activity android:name=".PlayerActivity">
+            Plays Current Selected Track
+        </activity>
+        <activity android:name=".ConfirmationActivity"></activity>
     </application>
 
 </manifest>

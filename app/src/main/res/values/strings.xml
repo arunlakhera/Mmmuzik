@@ -5,6 +5,13 @@
     <string name="title_genre">Genre</string>
     <string name="title_tracks">Tracks</string>
     <string name="title_play">Play Music</string>
-    <string name="play_track">Playing Track...."</string>
+    <string name="play_track">Playing Track....</string>
     <string name="button_buy">BUY</string>
+    <string name="home_desc">This is home Activity containing Music options</string>
+    <string name="album_desc">This Activity shows all Albums</string>
+    <string name="artists_desc">This Activity shows all Artists</string>
+    <string name="genre_desc">This Activity shows all Genre</string>
+    <string name="tracks_desc">This Activity shows all Tracks</string>
+    <string name="player_desc">This Activity shows playing Track</string>
+    <string name="cost">Rs.50</string>
 </resources>

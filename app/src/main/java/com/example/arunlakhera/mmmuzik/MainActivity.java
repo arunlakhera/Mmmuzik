@@ -8,11 +8,11 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Varaiable Declaration
     LinearLayout albums_Layout;
     LinearLayout artistsLayout;
     LinearLayout genre_Layout;
     LinearLayout tracks_Layout;
-
     Boolean albumsFlag;
     Boolean artistsFlag;
     Boolean genreFlag;
@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize the views
         albums_Layout = findViewById(R.id.layout_Albums);
         artistsLayout = findViewById(R.id.layout_Artists);
         genre_Layout = findViewById(R.id.layout_Genre);
         tracks_Layout = findViewById(R.id.layout_Tracks);
 
+        // Action to perform when Album option is selected
         albums_Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Action to perform when Artist option is selected
         artistsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Action to perform when Genre option is selected
         genre_Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Action to perform when Tracks option is selected
         tracks_Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,32 +79,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void callIntent(){
+    // Function to move to next activity based on user selected option
+    public void callIntent() {
 
         Intent activityIntent;
         activityIntent = new Intent(this, MainActivity.class);
 
-        if (albumsFlag){
+        if (albumsFlag) {
 
-            activityIntent = new Intent(this,AlbumsActivity.class);
+            activityIntent = new Intent(this, AlbumsActivity.class);
 
-        }else if (artistsFlag){
+        } else if (artistsFlag) {
 
-            activityIntent = new Intent(this,ArtistsActivity.class);
+            activityIntent = new Intent(this, ArtistsActivity.class);
 
-        }else if (genreFlag){
+        } else if (genreFlag) {
 
-            activityIntent = new Intent(this,GenreActivity.class);
+            activityIntent = new Intent(this, GenreActivity.class);
 
-        }else if (tracksFlag){
-
-            //activityIntent = new Intent(this,TracksActivity.class);
+        } else if (tracksFlag) {
 
             activityIntent = new Intent(MainActivity.this, TracksActivity.class);
             activityIntent.putExtra("albumName", "NA");
             activityIntent.putExtra("artistName", "NA");
             activityIntent.putExtra("genreName", "NA");
-
         }
 
         startActivity(activityIntent);

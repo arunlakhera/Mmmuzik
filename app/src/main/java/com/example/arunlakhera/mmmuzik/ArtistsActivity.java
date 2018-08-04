@@ -10,9 +10,9 @@ import android.widget.ListView;
 
 public class ArtistsActivity extends AppCompatActivity {
 
+    // Varaiable Declaration
     ListView artistsList;
     String artists[] = {"Artist 1", "Artist 2"};
-
     Button back_Button;
 
     @Override
@@ -20,12 +20,14 @@ public class ArtistsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artists);
 
+        // Initialize Variables
         artistsList = findViewById(R.id.listView_Artists);
         back_Button = findViewById(R.id.button_Back);
 
-        AlbumsAdapter artistsAdapter = new AlbumsAdapter(getApplicationContext(),artists);
+        AlbumsAdapter artistsAdapter = new AlbumsAdapter(getApplicationContext(), artists);
         artistsList.setAdapter(artistsAdapter);
 
+        // Action to perform when an Aritist is selected
         artistsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -41,11 +43,12 @@ public class ArtistsActivity extends AppCompatActivity {
             }
         });
 
+        // Action to perform when back button is clicked
         back_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ArtistsActivity.this,MainActivity.class));
+                startActivity(new Intent(ArtistsActivity.this, MainActivity.class));
             }
         });
     }

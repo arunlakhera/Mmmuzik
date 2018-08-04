@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 public class GenreAdapter extends BaseAdapter {
 
+    // Varaiable Declaration
     Context context;
     String genreList[];
     LayoutInflater genreInflater;
 
-    public GenreAdapter(Context applicationContext, String[] genreList){
+    //Constructor to initialize the values
+    public GenreAdapter(Context applicationContext, String[] genreList) {
         this.context = applicationContext;
         this.genreList = genreList;
         genreInflater = (LayoutInflater.from(applicationContext));
@@ -38,7 +40,7 @@ public class GenreAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        view = genreInflater.inflate(R.layout.genre_listview,null);
+        view = genreInflater.inflate(R.layout.genre_listview, null);
 
         TextView genre_TextView = view.findViewById(R.id.textView_Genre);
         ImageView icon = view.findViewById(R.id.imageView_Icon);

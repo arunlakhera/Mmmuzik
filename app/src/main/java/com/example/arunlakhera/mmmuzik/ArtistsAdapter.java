@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 public class ArtistsAdapter extends BaseAdapter {
 
+    // Varaiable Declaration
     Context context;
     String artistsList[];
     LayoutInflater artistsInflater;
 
-    public ArtistsAdapter(Context applicationContext, String[] artistsList){
+    // Constructor to initialize the values
+    public ArtistsAdapter(Context applicationContext, String[] artistsList) {
         this.context = applicationContext;
         this.artistsList = artistsList;
         artistsInflater = (LayoutInflater.from(applicationContext));
@@ -38,7 +40,7 @@ public class ArtistsAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        view = artistsInflater.inflate(R.layout.artists_listview,null);
+        view = artistsInflater.inflate(R.layout.artists_listview, null);
 
         TextView artist_TextView = view.findViewById(R.id.textView_Artist);
         ImageView icon = view.findViewById(R.id.imageView_Icon);

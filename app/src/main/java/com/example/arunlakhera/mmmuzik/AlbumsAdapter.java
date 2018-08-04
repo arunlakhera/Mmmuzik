@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 public class AlbumsAdapter extends BaseAdapter {
 
+    // Variable Declaration
     Context context;
     String albumsList[];
     LayoutInflater albumsInflater;
 
-    public AlbumsAdapter(Context applicationContext, String[] albumsList){
+    // Constructor to initialize values
+    public AlbumsAdapter(Context applicationContext, String[] albumsList) {
         this.context = applicationContext;
         this.albumsList = albumsList;
         albumsInflater = (LayoutInflater.from(applicationContext));
@@ -38,7 +40,7 @@ public class AlbumsAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        view = albumsInflater.inflate(R.layout.albums_listview,null);
+        view = albumsInflater.inflate(R.layout.albums_listview, null);
 
         TextView album_TextView = view.findViewById(R.id.textView_Album);
         ImageView icon = view.findViewById(R.id.imageView_Icon);

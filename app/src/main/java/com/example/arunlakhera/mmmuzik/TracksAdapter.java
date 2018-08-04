@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 public class TracksAdapter extends BaseAdapter {
 
+    //Variable Declaration
     Context context;
     String tracksList[];
     LayoutInflater tracksInflater;
 
-    public TracksAdapter(Context applicationContext, String[] tracksList){
+    // Construtor to initialize the variables
+    public TracksAdapter(Context applicationContext, String[] tracksList) {
         this.context = applicationContext;
         this.tracksList = tracksList;
         tracksInflater = (LayoutInflater.from(applicationContext));
@@ -38,7 +40,7 @@ public class TracksAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        view = tracksInflater.inflate(R.layout.tracks_listview,null);
+        view = tracksInflater.inflate(R.layout.tracks_listview, null);
 
         TextView tracks_TextView = view.findViewById(R.id.textView_Tracks);
         ImageView icon = view.findViewById(R.id.imageView_Icon);
